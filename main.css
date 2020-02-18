@@ -1,0 +1,42 @@
+.tic {
+  border: 2px solid grey;
+  height: 100px;
+}
+
+div {
+  visibility: visible;
+}
+
+div img {
+  width: 150px;
+  height: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex button {
+  position: fixed;
+  bottom: 30px;
+}
+
+#board {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  background: lightgrey;
+  width: 800px;
+  height: 540px;
+  padding: 24px;
+  margin: 0px auto;
+}
+/*# sourceMappingURL=main.css.map */
