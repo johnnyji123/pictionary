@@ -54,11 +54,19 @@ const checkCards = () => {
         
         console.log("hola");
       }  else {
+           empty();
+
           
         console.log("goodbye");
     }
     console.log(checkList);
 }
+// Your original program still WANTS to check
+
+// but the if statement is never true after you find a correct pair
+
+// // you have to work out why 
+
 
 const empty = () => {
     return checkList.length = 0
@@ -70,6 +78,10 @@ const unMatched = () => {
     });
 
 };
+setTimeout(() => {
+    $("img").css("display", "block")
+}, 500);
+
 
 $("img").css("display", "none");
 
