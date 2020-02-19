@@ -44,7 +44,7 @@ const checkList = [];
 // })
 
 const checkCards = () => {
-    console.log(checkList);
+    console.log('checking!');
     if (checkList[0].getAttribute("class") !== checkList[1].getAttribute("class")) {
         setTimeout(() => {
             checkList[0].children[0].style.display = "none";
@@ -54,6 +54,7 @@ const checkCards = () => {
         
         console.log("hola");
       }  else {
+          
         console.log("goodbye");
     }
     console.log(checkList);
@@ -62,7 +63,6 @@ const checkCards = () => {
 const empty = () => {
     return checkList.length = 0
 }
-console.log(empty)
 
 const unMatched = () => {
     $(".card").click((event) => {
@@ -76,7 +76,9 @@ $("img").css("display", "none");
 $(".card").click((event) => {
     $(event.target).children().first().css("display", "block");
     checkList.push(event.target);
+    console.log('click!');
     if (checkList.length == 2){
+        console.log('do check!');
         checkCards();
     }
     // console.log(checkList);
