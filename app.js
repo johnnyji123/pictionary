@@ -1,79 +1,73 @@
-// create some divs 4 by 4
-// create an array with different alphabets
-// 
-
-const array = ["A", "A", "B", "B", "C", "C", "D", "D", "E", "E", "F", "F", "G", "G", "H", "H"];
-
-randomArray = Math.floor(Math.random() * 16);
-
-const random = array[randomArray];
-console.log(random);
 
 
 
-const allDivs = document.querySelectorAll(".tic");
+
+
+
+const letters = ["a", "a", "b", "b", "c", "c", "d", "d", "e", "e", "f", "f", "g", "g", "h", "h"];
+console.log(letters[0]);
+
+const board = document.querySelector('#board');
+let openedCards = [];
+let matched = [];
+
+const allDivs = [...document.querySelectorAll(".card")];
 const allImgs = document.querySelectorAll(".img");
 
-// allDivs.forEach((div) => {
-//     div.addEventListener("click", (event) => {
-//         if (div.innerText.length == 0) {
-//             div.innerText = random;
-//         }
-//     }
+while (letters.length > 0) {
+    const random = Math.floor(Math.random() * letters.length);
+    const letter = letters.splice(random, 1);
+    const div = document.createElement('div');
+    div.classList = `card ${letter}`;
+    const img = document.createElement('img');
+    img.src = `/images/${letter}.png`;
+    div.appendChild(img);
+    board.appendChild(div);
+}
 
-//     );
-// });
-// const loop = () => {
-//     for (let i = 0; i<allImgs.length; i++){
-//         allDivs[i].addEventListener("click",displayCard)
+//counter to check if two cards turned over
+//when two cards turned over, you want to do a check - if first card = second card classlist.
+//if they don't match = hide them both - reset counter
 
-//     }
+// when you click on a card (and it's hidden)
+// add the div to an array called 'checkList'
+// when there's two divs in the checklist... check them!
+//      check by comparing the classlist of each one
+//      if they're the same, great! Need to rest the checklist
+//      if they're not the same, you need to hide them both again and reset the checklist
 
-// }
+const cardOpen = () => {
+    if (div.classList[letters[0]] == div.classList[letters[1]]) {
+        matchedCards();
+    } else if (div.classList[letters[0]] == div.classList[letters[2]]) {
+        matchedCards();
+    } else {
+        unmatched();
 
-allImgs.forEach((img) => {
-    img.addEventListener("click", (event) => {
-    
-        $(".img").click(function() {
-        $(this).show();
+        console.log("heloo!!!!");
+    }
+}
 
-    });
+    const matchedCards = () => {
+        $(".card").click((event) => {
+            $(event.target).children().first().css("display", "none")
+        })
 
-});
-   $(".img").css("visibility", "hidden");
-});
-
-
-allImgs.forEach((img) => {
-   
-});
-
-
-
-  
-
-
-
-
-// if (allImgs.innerText.css.visibility == "hidden"){
-    //             allImgs.innerText.css.visibility == "visible";
-    // $(".img").click(function(){
-    //     $(this).toggle();
+    }
 
 
-    // })
+    const unMatched = () => {
+        $(".card").click((event) => {
+            $(event.target).children().first().css("display", "block");
+        });
+
+    };
+
+    $("img").css("display", "none");
+
+    $(".card").click((event) => {
+        $(event.target).children().first().css("display", "block");
+        console.log("click!");
+    })
 
 
-
-
-
-// let i = array.length , j , temp;
-
-// while (--i>0) {
-//     randomNumber = Math.floor(Math.random() * (i+1));
-//     temp = array[randomNumber];
-//     array[randomNumber] = array[i];
-//     array[i] = temp;
-// }
-//     div.innerText = array
-// console.log(array);
