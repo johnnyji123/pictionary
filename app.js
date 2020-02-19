@@ -23,6 +23,7 @@ while (letters.length > 0) {
     img.src = `/images/${letter}.png`;
     div.appendChild(img);
     board.appendChild(div);
+    
 }
 
 const checkList = [];
@@ -42,13 +43,10 @@ const checkList = [];
 
 const checkCards = () => {
     if (checkList[0].classList != checkList[1].classList) {
-        matchedCards();
-    } else if (div.classList[letters[0]] != div.classList[letters[2]]) {
-        matchedCards();
-    } else {
-        unmatched();
-
-        console.log("heloo!!!!");
+        // div.style.display = "none";
+        console.log("hola");
+    }else {
+        console.log("goodbye");
     }
 }
 
@@ -64,10 +62,10 @@ $("img").css("display", "none");
 $(".card").click((event) => {
     $(event.target).children().first().css("display", "block");
     checkList.push(event.target);
-    if(checkList.length == 2){
+    if (checkList.length == 2) {
         checkCards();
     }
-    console.log(checkList);
+    // console.log(checkList);
     // checks if 2 things in checklist
     // if they are: call a function that compares them
 })
