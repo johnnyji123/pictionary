@@ -44,15 +44,19 @@ const checkList = [];
 // })
 
 const checkCards = () => {
-    if (checkList[0].classList != checkList[1].classList) {
-        // div.style.display = "none";
-        empty();
+    console.log(checkList);
+    if (checkList[0].getAttribute("class") !== checkList[1].getAttribute("class")) {
+        setTimeout(() => {
+            checkList[0].children[0].style.display = "none";
+            checkList[1].children[0].style.display = "none";
+            empty();
+        }, 500);
+        
         console.log("hola");
       }  else {
         console.log("goodbye");
-        empty()
     }
-    
+    console.log(checkList);
 }
 
 const empty = () => {
