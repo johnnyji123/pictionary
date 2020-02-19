@@ -29,6 +29,8 @@ while (letters.length > 0) {
 const checkList = [];
 
 
+
+
 // when you click on a card
 // push the div to an array called 'checkList'
 // when there's two divs in the checklist... check them! checkList.length
@@ -44,11 +46,19 @@ const checkList = [];
 const checkCards = () => {
     if (checkList[0].classList != checkList[1].classList) {
         // div.style.display = "none";
+        empty();
         console.log("hola");
-    }else {
+      }  else {
         console.log("goodbye");
+        empty()
     }
+    
 }
+
+const empty = () => {
+    return checkList.length = 0
+}
+console.log(empty)
 
 const unMatched = () => {
     $(".card").click((event) => {
@@ -62,7 +72,7 @@ $("img").css("display", "none");
 $(".card").click((event) => {
     $(event.target).children().first().css("display", "block");
     checkList.push(event.target);
-    if (checkList.length == 2) {
+    if (checkList.length == 2){
         checkCards();
     }
     // console.log(checkList);
