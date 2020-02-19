@@ -11,7 +11,7 @@ const board = document.querySelector('#board');
 let openedCards = [];
 let matched = [];
 
-const allDivs = [...document.querySelectorAll(".card")];
+const allDivs = document.querySelectorAll(".card");
 const allImgs = document.querySelectorAll(".img");
 
 while (letters.length > 0) {
@@ -25,21 +25,25 @@ while (letters.length > 0) {
     board.appendChild(div);
 }
 
-//counter to check if two cards turned over
-//when two cards turned over, you want to do a check - if first card = second card classlist.
-//if they don't match = hide them both - reset counter
+const checkList = [];
 
-// when you click on a card (and it's hidden)
-// add the div to an array called 'checkList'
-// when there's two divs in the checklist... check them!
+
+// when you click on a card
+// push the div to an array called 'checkList'
+// when there's two divs in the checklist... check them! checkList.length
 //      check by comparing the classlist of each one
 //      if they're the same, great! Need to rest the checklist
 //      if they're not the same, you need to hide them both again and reset the checklist
 
-const cardOpen = () => {
-    if (div.classList[letters[0]] == div.classList[letters[1]]) {
+// $(".card").click((event) => {
+//     $(event.target).children().first().checkList.push($(div.classList));
+
+// })
+
+const checkCards = () => {
+    if (checkList[0].classList != checkList[1].classList) {
         matchedCards();
-    } else if (div.classList[letters[0]] == div.classList[letters[2]]) {
+    } else if (div.classList[letters[0]] != div.classList[letters[2]]) {
         matchedCards();
     } else {
         unmatched();
@@ -48,26 +52,24 @@ const cardOpen = () => {
     }
 }
 
-    const matchedCards = () => {
-        $(".card").click((event) => {
-            $(event.target).children().first().css("display", "none")
-        })
-
-    }
-
-
-    const unMatched = () => {
-        $(".card").click((event) => {
-            $(event.target).children().first().css("display", "block");
-        });
-
-    };
-
-    $("img").css("display", "none");
-
+const unMatched = () => {
     $(".card").click((event) => {
         $(event.target).children().first().css("display", "block");
-        console.log("click!");
-    })
+    });
+
+};
+
+$("img").css("display", "none");
+
+$(".card").click((event) => {
+    $(event.target).children().first().css("display", "block");
+    checkList.push(event.target);
+    if(checkList.length == 2){
+        checkCards();
+    }
+    console.log(checkList);
+    // checks if 2 things in checklist
+    // if they are: call a function that compares them
+})
 
 
