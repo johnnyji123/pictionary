@@ -40,4 +40,42 @@ img{
     padding: 24px;
     margin: 0px auto;
 }
+
+button{
+  background-color:brown;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+#modal{
+   position:fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content{
+  background-color: orange;
+  margin: 20% auto;
+  padding: 20px;
+  width: 70%;
+
+  span{
+    float:right;
+    font-size: 30px;
+    color:lightgrey;
+  }
+}
  
+span:hover{
+  cursor: pointer;
+  color:black;
+  
+}
+

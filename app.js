@@ -4,6 +4,7 @@ window.onload = () => {
     // setTimeout(()=> {
     //     allImgs.style.display = "block";
     // }, 500);
+    hideModal();
 
 }
 
@@ -18,6 +19,9 @@ let matched = [];
 
 const allDivs = document.querySelectorAll(".card");
 const allImgs = document.querySelectorAll(".img");
+const modal = document.getElementById("modal");
+const closeModal = document.getElementsByClassName("close");
+
 
 while (letters.length > 0) {
     const random = Math.floor(Math.random() * letters.length);
@@ -66,17 +70,27 @@ const checkCards = () => {
     }
 }
 
+const hideModal = () => {
+    modal.style.display = "none";
+}
+
+
 const winMessasge = () => {
     allMatch.push(checkList[0])
     allMatch.push(checkList[1]);
     if (allMatch.length == 16) {
-
-        alert("you win");
+        modal.style.display = "block";
+        // alert("you win");
 
     }
 
 }
 
+const close = () => {
+    closeModal.addeventListner("click", (event)){
+
+    });
+}
 
 
 // Your original program still WANTS to check
