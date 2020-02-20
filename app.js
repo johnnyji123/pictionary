@@ -86,13 +86,12 @@ const winMessasge = () => {
 
 }
 
+
 const close = () => {
-    closeModal.addeventListner("click", (event)){
-
-    });
+    modal.addEventListener("click", (event) =>{
+        modal.style.display = "none";
+    })
 }
-
-
 // Your original program still WANTS to check
 
 // but the if statement is never true after you find a correct pair
