@@ -3,7 +3,7 @@ body {
 }
 
 .card {
-  border: 2px solid green;
+  border: 2px solid #00FF00;
   height: 100px;
 }
 
@@ -80,7 +80,7 @@ button:hover {
 }
 
 .modal-content {
-  background-color: green;
+  background-color: #00FF00;
   margin: 20% auto;
   padding: 20px;
   width: 70%;
@@ -96,6 +96,7 @@ button:hover {
 
 .modal-content span p {
   text-align: center;
+  color: white;
 }
 
 .modal-content span #again {
