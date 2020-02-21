@@ -58,6 +58,11 @@ button:hover{
   cursor: pointer;
 }
 
+#restart{
+  position: fixed;
+  bottom: 0;
+}
+
 #modal{
    position:fixed;
   z-index: 1;
