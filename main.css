@@ -75,16 +75,27 @@ button:hover {
 }
 
 .modal-content {
-  background-color: orange;
+  background-color: green;
   margin: 20% auto;
   padding: 20px;
   width: 70%;
+  text-align: center;
+  margin: auto auto;
 }
 
 .modal-content span {
   float: right;
   font-size: 30px;
-  color: lightgrey;
+  color: black;
+}
+
+.modal-content span p {
+  text-align: center;
+}
+
+.modal-content span #again {
+  text-align: center;
+  margin: auto auto;
 }
 
 span:hover {
