@@ -1,10 +1,17 @@
 body{
-  background-color: black;
+  background-color: #141414;
 }
 
 .card {
   border: 2px solid #00FF00;
+  margin:10px;
   height: 100px;
+  border-radius: 5px;
+  // background-color: black;
+   
+  &:hover{
+    cursor: pointer;
+   }
  
 }
 
@@ -28,7 +35,7 @@ img{
   justify-content: center;
   
   button {
-    position: fixed;
+    // position: fixed;
     bottom: 30px;
   }
 
@@ -40,6 +47,9 @@ img{
     height: 540px;
     padding: 24px;
     margin: 0px auto;
+    // background-color: black;
+    border: 0.5px solid white;
+    border-radius: 10px;
 }
 
 .flex{
@@ -58,9 +68,18 @@ button:hover{
   cursor: pointer;
 }
 
-#restart{
-  position: fixed;
-  bottom: 0;
+// #restart{
+//   // position: fixed;
+//   // bottom: 0;
+//   // border:2px solid red;
+// }
+
+.flex{
+ height: 100px;
+//  border: 2px solid red;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 
 #modal{
