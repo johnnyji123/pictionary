@@ -1,7 +1,9 @@
-
+body{
+  background-color: black;
+}
 
 .card {
-  border: 2px solid grey;
+  border: 2px solid green;
   height: 100px;
  
 }
@@ -34,15 +36,22 @@ img{
 #board{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    background:lightgrey;
     width: 800px;
     height: 540px;
     padding: 24px;
     margin: 0px auto;
 }
 
+.flex{
+  display:flex;
+  align-items: flex-end;
+  margin-bottom: 0;
+}
+
 button{
+  padding:20px;
   background-color:brown;
+  color: white;
 }
 
 button:hover{
