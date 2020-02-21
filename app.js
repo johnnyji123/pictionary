@@ -8,37 +8,35 @@ window.onload = () => {
 
 }
 
-
-
-const letters = ["a", "a", "b", "b", "c", "c", "d", "d", "e", "e", "f", "f", "g", "g", "h", "h"];
-console.log(letters[0]);
-
 const board = document.querySelector('#board');
-let openedCards = [];
-let matched = [];
 
 const allDivs = document.querySelectorAll(".card");
 const allImgs = document.querySelectorAll(".img");
 const modal = document.getElementById("modal");
-const closeModal = document.getElementsByClassName("close");
+const closeModal = document.getElementsByClassName("close")[0];
+const restart = document.getElementById("restart");
+const playAgain = document.getElementById("again");
 
 
-while (letters.length > 0) {
-    const random = Math.floor(Math.random() * letters.length);
-    const letter = letters.splice(random, 1);
-    const div = document.createElement('div');
-    div.classList = `card ${letter}`;
-    const img = document.createElement('img');
-    img.src = `/images/${letter}.png`;
-    div.appendChild(img);
-    board.appendChild(div);
 
+const randomise = () => {
+    const letters = ["a", "a", "b", "b", "c", "c", "d", "d", "e", "e", "f", "f", "g", "g", "h", "h"];
+    while (letters.length > 0) {
+        const random = Math.floor(Math.random() * letters.length);
+        const letter = letters.splice(random, 1);
+        const div = document.createElement('div');
+        div.classList = `card ${letter}`;
+        const img = document.createElement('img');
+        img.src = `/images/${letter}.png`;
+        div.appendChild(img);
+        board.appendChild(div);
+    }
 }
 
-const checkList = [];
-const allMatch = [];
+let checkList = [];
+let allMatch = [];
 
-
+randomise();
 
 // when you click on a card
 // push the div to an array called 'checkList'
@@ -80,23 +78,35 @@ const winMessasge = () => {
     allMatch.push(checkList[1]);
     if (allMatch.length == 16) {
         modal.style.display = "block";
-        // alert("you win");
-
+        closeM();
     }
 
 }
 
 
-const close = () => {
-    modal.addEventListener("click", (event) =>{
+const closeM = () => {
+    closeModal.addEventListener("click", () => {
         modal.style.display = "none";
-    })
+    });
+
 }
-// Your original program still WANTS to check
 
-// but the if statement is never true after you find a correct pair
+playAgain.addEventListener("click",() => {
+    modal.style.display = "none";
+    reset();
+})
 
-// // you have to work out why 
+restart.addEventListener("click", () => {
+    reset();
+});
+
+const reset = () => {
+    checkList = [];
+    allMatch = [];
+    board.innerHTML = "";
+    randomise();
+    addListeners();
+}
 
 
 const empty = () => {
@@ -106,20 +116,23 @@ const empty = () => {
 
 
 
-$("img").css("display", "none");
 
-$(".card").click((event) => {
-    $(event.target).children().first().css("display", "block");
-    checkList.push(event.target);
-    console.log('click!');
-    if (checkList.length == 2) {
-        console.log('do check!');
-        checkCards();
-    }
-    // console.log(checkList);
-    // checks if 2 things in checklist
-    // if they are: call a function that compares them
-})
+const addListeners = () => {
+    $("img").css("display", "none");
+    $(".card").click((event) => {
+        $(event.target).children().first().css("display", "block");
+
+        if (event.target.classList.contains("card")) {
+            checkList.push(event.target);
+        }
+        if (checkList.length == 2) {
+            console.log('do check!');
+            checkCards();
+        }
+    });
+}
+
+addListeners();
 
 
 // show the board at the start - delay hidden?
