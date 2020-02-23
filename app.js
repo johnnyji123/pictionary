@@ -16,6 +16,9 @@ const modal = document.getElementById("modal");
 const closeModal = document.getElementsByClassName("close")[0];
 const restart = document.getElementById("restart");
 const playAgain = document.getElementById("again");
+const timer = document.getElementById("timer");
+
+
 
 
 
@@ -80,7 +83,6 @@ const winMessasge = () => {
         modal.style.display = "block";
         closeM();
     }
-
 }
 
 
@@ -115,12 +117,11 @@ const empty = () => {
 
 
 
-
-
 const addListeners = () => {
     $("img").css("display", "none");
     $(".card").click((event) => {
         $(event.target).children().first().css("display", "block");
+        timer.style.display = "block";
 
         if (event.target.classList.contains("card")) {
             checkList.push(event.target);
@@ -129,10 +130,31 @@ const addListeners = () => {
             console.log('do check!');
             checkCards();
         }
+       
     });
 }
 
 addListeners();
+
+
+timer.innerText = 0;
+let second = 0;
+let minute = 0;
+
+const timeIt = () => {
+    timer.innerText = `${minute} mins ${second} secs`;
+    second++
+    if (second == 60){
+        minute++
+        second= 0;
+        
+    }
+
+}
+
+timer.style.display = "none";
+
+setInterval(timeIt,1000);
 
 
 // show the board at the start - delay hidden?
