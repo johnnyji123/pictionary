@@ -54,7 +54,7 @@ div {
 
 button {
   padding: 20px;
-  background-color: brown;
+  background-color: orange;
   color: white;
 }
 
@@ -104,10 +104,14 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.5);
 }
 #instructions{
+  margin-left: 30px;
   display: flex;
   align-items: center;
   color:white;
   border: 2px solid white;
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
   display: inline-block;
   font-family: 'Indie Flower', ;
   font-size:30px;
@@ -128,7 +132,7 @@ p{
   }
 }
 .modal-content {
-  background-color: #00ff00;
+  background-color: lightgrey;
   margin: 20% auto;
   padding: 20px;
   width: 70%;
@@ -140,16 +144,22 @@ p{
     font-size: 30px;
     color: black;
 
-    p {
-      text-align: center;
-      color: white;
+   
     }
     #again {
       text-align: center;
       margin: auto auto;
     }
   }
-}
+  .modal1 {
+    text-align: center;
+    color: black;
+
+    i{
+      background-color: yellow;
+      margin: 10px;
+    }
+  }
 
 span:hover {
   cursor: pointer;

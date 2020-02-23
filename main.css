@@ -62,7 +62,7 @@ div img {
 
 button {
   padding: 20px;
-  background-color: brown;
+  background-color: orange;
   color: white;
 }
 
@@ -112,6 +112,7 @@ button:hover {
 }
 
 #instructions {
+  margin-left: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -120,6 +121,9 @@ button:hover {
           align-items: center;
   color: white;
   border: 2px solid white;
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
   display: inline-block;
   font-family: "Indie Flower";
   font-size: 30px;
@@ -146,7 +150,7 @@ p {
 }
 
 .modal-content {
-  background-color: #00ff00;
+  background-color: lightgrey;
   margin: 20% auto;
   padding: 20px;
   width: 70%;
@@ -160,14 +164,19 @@ p {
   color: black;
 }
 
-.modal-content span p {
-  text-align: center;
-  color: white;
-}
-
-.modal-content span #again {
+.modal-content #again {
   text-align: center;
   margin: auto auto;
+}
+
+.modal1 {
+  text-align: center;
+  color: black;
+}
+
+.modal1 i {
+  background-color: yellow;
+  margin: 10px;
 }
 
 span:hover {

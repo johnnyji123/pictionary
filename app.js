@@ -156,14 +156,17 @@ const addListeners = () => {
     $("img").css("display", "none");
     $(".card").click((event) => {
         $(event.target).children().first().css("display", "block");
-        
+           
 
         if (event.target.classList.contains("card")) {
             checkList.push(event.target);
-        }
-        if (checkList.length == 2) {
+        }if (checkList.length == 2) {
             console.log('do check!');
             checkCards();
+            
+        
+        }else if (checkList.length == 1){
+            timeIt();
         }
        
     });
@@ -177,18 +180,21 @@ let second = 0;
 let minute = 0;
 
 const timeIt = () => {
+    
     timer.innerText = `${minute} mins ${second} secs`;
     second++
     if (second == 60){
         minute++
         second= 0;
-        
+       
+
     }
 
 }
 
 
-setInterval(timeIt,1000);
+setInterval(timeIt, 1000);
+
 
 
 // show the board at the start - delay hidden?
