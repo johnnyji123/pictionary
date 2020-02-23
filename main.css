@@ -83,6 +83,23 @@ button:hover {
           align-items: center;
 }
 
+#modal2 {
+  left: 0;
+  top: 0;
+  overflow: auto;
+}
+
+#modal2 .modal-content-2 {
+  background-color: red;
+  text-align: center;
+}
+
+#modal2 #close2 {
+  color: lightgrey;
+  font-size: 30px;
+  float: right;
+}
+
 #modal {
   position: fixed;
   z-index: 1;
@@ -92,6 +109,18 @@ button:hover {
   width: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+#instructions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  border: 2px solid white;
+  display: inline-block;
 }
 
 .time {

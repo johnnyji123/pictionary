@@ -17,10 +17,45 @@ const closeModal = document.getElementsByClassName("close")[0];
 const restart = document.getElementById("restart");
 const playAgain = document.getElementById("again");
 const timer = document.getElementById("timer");
+const instructions = document.getElementById("instructions");
+const secondModal = document.getElementById ("modal2");
+const closeSecond = document.getElementById ("close2");
+const gotIt = document.getElementById("understood");
 
 
+const none = () => {
+    secondModal.style.display = "none";
+}
+none();
 
 
+const showModal = () => {
+    instructions.addEventListener("click",() => {
+        secondModal.style.display = "block";
+       
+      
+    });
+   
+};
+showModal();
+
+
+const closeSecondModal = () => {
+    closeSecond.addEventListener("click", () => {
+        secondModal.style.display = "none";
+        
+    });
+};
+
+closeSecondModal();
+
+const closeButton = () => {
+    gotIt.addEventListener("click", () =>{
+        secondModal.style.display="none";
+    });
+};
+
+closeButton();
 
 const randomise = () => {
     const letters = ["a", "a", "b", "b", "c", "c", "d", "d", "e", "e", "f", "f", "g", "g", "h", "h"];
@@ -121,7 +156,7 @@ const addListeners = () => {
     $("img").css("display", "none");
     $(".card").click((event) => {
         $(event.target).children().first().css("display", "block");
-        timer.style.display = "block";
+        
 
         if (event.target.classList.contains("card")) {
             checkList.push(event.target);
@@ -152,7 +187,6 @@ const timeIt = () => {
 
 }
 
-timer.style.display = "none";
 
 setInterval(timeIt,1000);
 
