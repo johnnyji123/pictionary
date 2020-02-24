@@ -195,7 +195,7 @@ const timeIt = () => {
 }
 
 // clearInterval(timeIt, 1000);
-setInterval(timeIt, 1000);
+setInterval(timeIt, 1000);  
 
 
 
