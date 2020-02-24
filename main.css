@@ -100,6 +100,10 @@ button:hover {
   float: right;
 }
 
+#moves {
+  color: white;
+}
+
 #modal {
   position: fixed;
   z-index: 1;

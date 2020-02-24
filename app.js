@@ -23,6 +23,7 @@ const closeSecond = document.getElementById ("close2");
 const gotIt = document.getElementById("understood");
 
 
+
 const none = () => {
     secondModal.style.display = "none";
 }
@@ -135,6 +136,9 @@ playAgain.addEventListener("click",() => {
 
 restart.addEventListener("click", () => {
     reset();
+    
+  
+    
 });
 
 const reset = () => {
@@ -165,8 +169,6 @@ const addListeners = () => {
             checkCards();
             
         
-        }else if (checkList.length == 1){
-            timeIt();
         }
        
     });
@@ -187,16 +189,30 @@ const timeIt = () => {
         minute++
         second= 0;
        
-
+        
     }
 
 }
 
-
+// clearInterval(timeIt, 1000);
 setInterval(timeIt, 1000);
 
 
 
-// show the board at the start - delay hidden?
-// you win message when all cards match
-// restart button to play the game again
+
+// let moves = 0;
+// let move = document.getElementById("moves");
+
+// const counter = () => {
+//    if (checkList.length == 1){
+//        move.innerHTML = moves++
+       
+      
+// } else if (moves == 1){
+//     timeIt();
+//     console.log("woerawf")
+// }
+// };
+
+// counter();
+
