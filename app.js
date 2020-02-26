@@ -18,8 +18,8 @@ const restart = document.getElementById("restart");
 const playAgain = document.getElementById("again");
 const timer = document.getElementById("timer");
 const instructions = document.getElementById("instructions");
-const secondModal = document.getElementById ("modal2");
-const closeSecond = document.getElementById ("close2");
+const secondModal = document.getElementById("modal2");
+const closeSecond = document.getElementById("close2");
 const gotIt = document.getElementById("understood");
 
 
@@ -31,12 +31,12 @@ none();
 
 
 const showModal = () => {
-    instructions.addEventListener("click",() => {
+    instructions.addEventListener("click", () => {
         secondModal.style.display = "block";
-       
-      
+
+
     });
-   
+
 };
 showModal();
 
@@ -44,15 +44,15 @@ showModal();
 const closeSecondModal = () => {
     closeSecond.addEventListener("click", () => {
         secondModal.style.display = "none";
-        
+
     });
 };
 
 closeSecondModal();
 
 const closeButton = () => {
-    gotIt.addEventListener("click", () =>{
-        secondModal.style.display="none";
+    gotIt.addEventListener("click", () => {
+        secondModal.style.display = "none";
     });
 };
 
@@ -129,16 +129,16 @@ const closeM = () => {
 
 }
 
-playAgain.addEventListener("click",() => {
+playAgain.addEventListener("click", () => {
     modal.style.display = "none";
     reset();
 })
 
 restart.addEventListener("click", () => {
     reset();
-    
-  
-    
+
+
+
 });
 
 const reset = () => {
@@ -159,60 +159,61 @@ const empty = () => {
 const addListeners = () => {
     $("img").css("display", "none");
     $(".card").click((event) => {
+
+
         $(event.target).children().first().css("display", "block");
-           
+
 
         if (event.target.classList.contains("card")) {
+            counter();
             checkList.push(event.target);
-        }if (checkList.length == 2) {
+        } if (checkList.length == 2) {
             console.log('do check!');
             checkCards();
-            
-        
+
+
         }
-       
+
     });
 }
 
 addListeners();
 
 
-timer.innerText = 0;
+timer.innerText = '';
 let second = 0;
 let minute = 0;
 
 const timeIt = () => {
-    
+
     timer.innerText = `${minute} mins ${second} secs`;
     second++
-    if (second == 60){
+    if (second == 60) {
         minute++
-        second= 0;
-       
-        
+        second = 0;
     }
 
 }
 
 // clearInterval(timeIt, 1000);
-setInterval(timeIt, 1000);  
 
 
 
 
-// let moves = 0;
-// let move = document.getElementById("moves");
 
-// const counter = () => {
-//    if (checkList.length == 1){
-//        move.innerHTML = moves++
-       
-      
-// } else if (moves == 1){
-//     timeIt();
-//     console.log("woerawf")
-// }
-// };
+let moves = 0;
+let move = document.getElementById("moves");
 
-// counter();
+const counter = () => {
+    moves++;
+
+    if (moves == 1) {
+        setInterval(timeIt, 1000);
+        
+    }
+    move.innerHTML = Math.floor(moves/2);
+}
+
+
+
 
