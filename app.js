@@ -59,7 +59,7 @@ const closeButton = () => {
 closeButton();
 
 const randomise = () => {
-    const letters = ["a", "a", "b", "b", "c", "c", "d", "d", "e", "e", "f", "f", "g", "g", "h", "h"];
+    const letters = ["A", "A", "b", "b", "c", "c", "d", "d", "e", "e", "f", "f", "g", "g", "h", "h"];
     while (letters.length > 0) {
         const random = Math.floor(Math.random() * letters.length);
         const letter = letters.splice(random, 1);
