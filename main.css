@@ -1,6 +1,6 @@
 body {
-  background: -webkit-gradient(linear, left top, right top, from(#000046), to(#000c40));
-  background: linear-gradient(to right, #000046, #000c40);
+  background: -webkit-gradient(linear, left top, right top, from(#000046), to(#1cb5e0));
+  background: linear-gradient(to right, #000046, #1cb5e0);
 }
 
 .card {
