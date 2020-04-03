@@ -66,7 +66,7 @@ const randomise = () => {
         const div = document.createElement('div');
         div.classList = `card ${letter}`;
         const img = document.createElement('img');
-        img.src = `/images/${letter}.png`;
+        img.src = `./images/${letter}.png`;
         div.appendChild(img);
         board.appendChild(div);
     }
