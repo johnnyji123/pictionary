@@ -1,9 +1,10 @@
 body {
-  background-color: #141414;
+  background: -webkit-gradient(linear, left top, right top, from(#000046), to(#000c40));
+  background: linear-gradient(to right, #000046, #000c40);
 }
 
 .card {
-  border: 2px solid #00ff00;
+  border: 2px solid white;
   margin: 10px;
   height: 100px;
   border-radius: 5px;
