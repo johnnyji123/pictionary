@@ -25,9 +25,10 @@ div {
   }
 }
 
-.flex {
+.res {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 
   button {
     // position: fixed;
@@ -93,8 +94,21 @@ button:hover {
   }
 }
 
+.flex{
+  display: flex;
+  justify-content: flex-start;
+}
+.text{
+  color:white;
+  width: 80px;
+  margin-left: 200px;
+  font-size: 20px;
+}
 #moves{
   color: white;
+  width: 200px;
+  font-size: 20px;
+  
 }
 #modal {
   position: fixed;

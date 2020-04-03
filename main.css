@@ -24,16 +24,17 @@ div img {
      object-fit: contain;
 }
 
-.flex {
+.res {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 10px;
 }
 
-.flex button {
+.res button {
   bottom: 30px;
 }
 
@@ -100,8 +101,26 @@ button:hover {
   float: right;
 }
 
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.text {
+  color: white;
+  width: 80px;
+  margin-left: 200px;
+  font-size: 20px;
+}
+
 #moves {
   color: white;
+  width: 200px;
+  font-size: 20px;
 }
 
 #modal {
